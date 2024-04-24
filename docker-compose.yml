@@ -1,0 +1,43 @@
+version: "3.9"
+
+volumes:
+
+    # remembers gz config, downloaded models etc
+    gz_config:
+
+services:
+
+  px4_gazebo:
+    environment:
+      - HOST_UID=${HOST_UID}
+      - HOST_GID=${HOST_GID}
+      - RUN_VNC=false
+      - SSH_AUTH_SOCK=${SSH_AUTH_SOCK}
+      - ROS_DOMAIN_ID=1
+      - PX4_MICRODDS_NS=px4_1
+    image: px4_gazebo
+    # Networking and IPC for ROS 2
+    network_mode: host
+    ipc: host
+
+    # image: ${REGISTRY}/cognipilot/dream:${TAG}
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    build:
+       dockerfile: Dockerfile
+    tty: true
+    stdin_open: true
+    privileged: true
+    hostname: px4_gazebo
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=0
+    volumes:
+      - ./work:/home/user/work
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${SSH_AUTH_SOCK}:${SSH_AUTH_SOCK}
+      - $HOME/gnupg:/home/user/.gnupg
+#      - $HOME/.ssh:/home/user/.ssh
+#      - $HOME/.gitconfig:/home/user/.gitconfig
+#      - gz_config:/home/user/.gz
