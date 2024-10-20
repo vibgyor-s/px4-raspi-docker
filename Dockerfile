@@ -54,11 +54,13 @@ RUN bash /tmp/install/ros.sh && /docker_clean.sh
 # COPY install/ros_gz.sh /tmp/install/ros_gz.sh
 # RUN /tmp/install/ros_gz.sh && /docker_clean.sh
 
+# IGNORE FOR NOW
 # add groups before we do anything that might add a new group
+# 
 # ARG GID_INPUT=107
 # ARG GID_RENDER=110
-RUN sudo groupadd -r -g $GID_INPUT input && \
- sudo groupadd -r -g $GID_RENDER render
+# RUN sudo groupadd -r -g $GID_INPUT input && \
+#  sudo groupadd -r -g $GID_RENDER render
 
 #COPY install/latex.sh /tmp/install/latex.sh
 #RUN bash /tmp/install/latex.sh && /docker_clean.sh
