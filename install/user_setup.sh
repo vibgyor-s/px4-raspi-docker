@@ -23,5 +23,5 @@ rosdep update
 # source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 # EOF
 
-echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
-source ~/.bashrc
+# echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+# source ~/.bashrc
