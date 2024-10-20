@@ -7,11 +7,11 @@ set -x
 # bash ubuntu.sh --no-sim-tools && rm ubuntu.sh
 # bash ubuntu.sh --no-nuttx --no-sim-tools && rm ubuntu.sh
 
-git clone https://github.com/eProsima/Micro-XRCE-DDS-Agent.git
-cd Micro-XRCE-DDS-Agent
-mkdir build
-cd build
-cmake ..
-make
-sudo make install
-sudo ldconfig /usr/local/lib/
+# git clone https://github.com/eProsima/Micro-XRCE-DDS-Agent.git
+# cd Micro-XRCE-DDS-Agent
+# mkdir build
+# cd build
+# cmake ..
+# make
+# sudo make install
+# sudo ldconfig /usr/local/lib/
