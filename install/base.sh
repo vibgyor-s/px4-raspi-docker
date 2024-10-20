@@ -2,6 +2,9 @@
 set -e
 set -x
 
+sudo apt-get -y update
+sudo apt-get -y upgrade
+
 sudo DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
 	bash-completion \
 	build-essential \
