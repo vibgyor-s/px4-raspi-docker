@@ -55,8 +55,8 @@ RUN bash /tmp/install/ros.sh && /docker_clean.sh
 # RUN /tmp/install/ros_gz.sh && /docker_clean.sh
 
 # add groups before we do anything that might add a new group
-ARG GID_INPUT=107
-ARG GID_RENDER=110
+# ARG GID_INPUT=107
+# ARG GID_RENDER=110
 RUN sudo groupadd -r -g $GID_INPUT input && \
  sudo groupadd -r -g $GID_RENDER render
 

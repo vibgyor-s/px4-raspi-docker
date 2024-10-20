@@ -9,8 +9,8 @@ services:
 
   px4_gazebo:
     environment:
-      # - HOST_UID=${HOST_UID}
-      # - HOST_GID=${HOST_GID}
+      - HOST_UID=${HOST_UID}
+      - HOST_GID=${HOST_GID}
       - RUN_VNC=false
       - SSH_AUTH_SOCK=${SSH_AUTH_SOCK}
       - ROS_DOMAIN_ID=1
